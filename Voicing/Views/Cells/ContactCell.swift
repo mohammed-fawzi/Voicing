@@ -1,5 +1,5 @@
 //
-//  UserCell.swift
+//  ContactCell.swift
 //  Voicing
 //
 //  Created by mohamed fawzy on 11/15/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserCell: UITableViewCell {
+class ContactCell: UITableViewCell {
 
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!

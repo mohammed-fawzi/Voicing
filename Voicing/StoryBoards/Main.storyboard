@@ -96,15 +96,15 @@
             </objects>
             <point key="canvasLocation" x="3359.1999999999998" y="321.58920539730138"/>
         </scene>
-        <!--Users View Controller-->
+        <!--Contacts View Controller-->
         <scene sceneID="Pls-cV-97t">
             <objects>
-                <tableViewController id="1MU-Yn-vlv" customClass="UsersViewController" customModule="Voicing" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="1MU-Yn-vlv" customClass="ContactsViewController" customModule="Voicing" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="g0P-hc-NeX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="Qqb-fb-8oK" userLabel="Segment Container">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="Qqb-fb-8oK" userLabel="Segment Container">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -124,7 +124,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" id="0Ol-Ox-3Jv" customClass="UserCell" customModule="Voicing" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" id="0Ol-Ox-3Jv" customClass="ContactCell" customModule="Voicing" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Ol-Ox-3Jv" id="yko-A1-Yjw">

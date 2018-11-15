@@ -10,9 +10,9 @@
 		3732941814843F1EA27FE38B /* Pods_Voicing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11ADB937F6B3DEDD3EA21BF0 /* Pods_Voicing.framework */; };
 		714BA24C219C558000C0D805 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 714BA24B219C558000C0D805 /* Main.storyboard */; };
 		714BA24E219CA54B00C0D805 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714BA24D219CA54B00C0D805 /* SettingsViewController.swift */; };
-		714BA252219CE02D00C0D805 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714BA251219CE02D00C0D805 /* UserCell.swift */; };
+		714BA252219CE02D00C0D805 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714BA251219CE02D00C0D805 /* ContactCell.swift */; };
 		714BA254219CEAEC00C0D805 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714BA253219CEAEC00C0D805 /* Cells.swift */; };
-		714BA256219CEB7200C0D805 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714BA255219CEB7200C0D805 /* UsersViewController.swift */; };
+		714BA256219CEB7200C0D805 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714BA255219CEB7200C0D805 /* ContactsViewController.swift */; };
 		717467D7219B2CC300D336DD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717467D6219B2CC300D336DD /* RegisterViewController.swift */; };
 		717467D9219B2FBC00D336DD /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717467D8219B2FBC00D336DD /* Segues.swift */; };
 		7177EC31219867A700E94EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177EC30219867A700E94EAC /* AppDelegate.swift */; };
@@ -34,9 +34,9 @@
 		67EACE7896D2F8DA771BF7B0 /* Pods-Voicing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voicing.release.xcconfig"; path = "Pods/Target Support Files/Pods-Voicing/Pods-Voicing.release.xcconfig"; sourceTree = "<group>"; };
 		714BA24B219C558000C0D805 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		714BA24D219CA54B00C0D805 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		714BA251219CE02D00C0D805 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		714BA251219CE02D00C0D805 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		714BA253219CEAEC00C0D805 /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
-		714BA255219CEB7200C0D805 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		714BA255219CEB7200C0D805 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		717467D6219B2CC300D336DD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		717467D8219B2FBC00D336DD /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		7177EC2D219867A700E94EAC /* Voicing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voicing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +86,7 @@
 		714BA250219CDFAA00C0D805 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				714BA251219CE02D00C0D805 /* UserCell.swift */,
+				714BA251219CE02D00C0D805 /* ContactCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -111,7 +111,7 @@
 				7177EC32219867A700E94EAC /* WelcomeViewController.swift */,
 				717467D6219B2CC300D336DD /* RegisterViewController.swift */,
 				714BA24D219CA54B00C0D805 /* SettingsViewController.swift */,
-				714BA255219CEB7200C0D805 /* UsersViewController.swift */,
+				714BA255219CEB7200C0D805 /* ContactsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -331,7 +331,7 @@
 			files = (
 				71F86C8B219A3EA200EA308F /* HelperFunctions.swift in Sources */,
 				714BA254219CEAEC00C0D805 /* Cells.swift in Sources */,
-				714BA256219CEB7200C0D805 /* UsersViewController.swift in Sources */,
+				714BA256219CEB7200C0D805 /* ContactsViewController.swift in Sources */,
 				71F86C89219A3EA200EA308F /* Constants.swift in Sources */,
 				7177EC33219867A700E94EAC /* WelcomeViewController.swift in Sources */,
 				714BA24E219CA54B00C0D805 /* SettingsViewController.swift in Sources */,
@@ -340,7 +340,7 @@
 				71F86C8A219A3EA200EA308F /* FUser.swift in Sources */,
 				71F86C8C219A3EA200EA308F /* FCollectionReference.swift in Sources */,
 				717467D9219B2FBC00D336DD /* Segues.swift in Sources */,
-				714BA252219CE02D00C0D805 /* UserCell.swift in Sources */,
+				714BA252219CE02D00C0D805 /* ContactCell.swift in Sources */,
 				71F86C88219A3EA200EA308F /* CountryCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
