@@ -26,8 +26,7 @@ class ContactsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Contacts"
-        // get rid of empthy cells 
+        // get rid of empthy cells
         tableView.tableFooterView = UIView()
         navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
@@ -36,10 +35,8 @@ class ContactsViewController: UITableViewController {
         loadUsers(filter: "All")
         
     }
+   
 
-    
-    
-    
     
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
         
@@ -52,6 +49,19 @@ class ContactsViewController: UITableViewController {
             loadUsers(filter: kCITY)
         default:
             return
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segue.showContactDetails.rawValue {
+            let vc = segue.destination as! ContactDetailsViewController
+            if searchController.isActive && searchController.searchBar.text != "" {
+                vc.user = filterdUsers[tableView.indexPathForSelectedRow!.row]
+            }
+            else{
+                let sectionTitle = sectionTitleList[tableView.indexPathForSelectedRow!.section]
+                vc.user = allUsersGroupped[sectionTitle]![tableView.indexPathForSelectedRow!.row]
+            }
         }
     }
     
@@ -99,6 +109,7 @@ extension ContactsViewController {
         }
         
         cell.generateCellWith(user: user, indexPath: indexPath)
+        cell.delegate = self
         
         return cell
     }
@@ -117,6 +128,10 @@ extension ContactsViewController{
     
     override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         return index
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -209,5 +224,21 @@ extension ContactsViewController {
     }
 }
 
-
+// show contact details when clicked the avatar image
+extension ContactsViewController: ContactCellDelegate {
+    func didTappedAvatar(indexPath: IndexPath) {
+        
+      let vc =  UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "contactDetailVC") as! ContactDetailsViewController
+        
+        if searchController.isActive && searchController.searchBar.text != "" {
+            vc.user = filterdUsers[indexPath.row]
+        }
+        else{
+            let sectionTitle = sectionTitleList[indexPath.section]
+            vc.user = allUsersGroupped[sectionTitle]![indexPath.row]
+        }
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
 

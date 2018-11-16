@@ -20,6 +20,7 @@
 		7177EC36219867A700E94EAC /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7177EC34219867A700E94EAC /* Welcome.storyboard */; };
 		7177EC38219867A900E94EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7177EC37219867A900E94EAC /* Assets.xcassets */; };
 		7177EC3B219867A900E94EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7177EC39219867A900E94EAC /* LaunchScreen.storyboard */; };
+		71BFC91C219DC368001686E6 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BFC91B219DC368001686E6 /* ContactDetailsViewController.swift */; };
 		71F86C80219A309B00EA308F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71F86C7F219A309B00EA308F /* GoogleService-Info.plist */; };
 		71F86C88219A3EA200EA308F /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F86C82219A3EA200EA308F /* CountryCode.swift */; };
 		71F86C89219A3EA200EA308F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F86C83219A3EA200EA308F /* Constants.swift */; };
@@ -46,6 +47,7 @@
 		7177EC37219867A900E94EAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7177EC3A219867A900E94EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7177EC3C219867A900E94EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71BFC91B219DC368001686E6 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		71F86C7F219A309B00EA308F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		71F86C82219A3EA200EA308F /* CountryCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCode.swift; sourceTree = "<group>"; };
 		71F86C83219A3EA200EA308F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				717467D6219B2CC300D336DD /* RegisterViewController.swift */,
 				714BA24D219CA54B00C0D805 /* SettingsViewController.swift */,
 				714BA255219CEB7200C0D805 /* ContactsViewController.swift */,
+				71BFC91B219DC368001686E6 /* ContactDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				714BA24E219CA54B00C0D805 /* SettingsViewController.swift in Sources */,
 				717467D7219B2CC300D336DD /* RegisterViewController.swift in Sources */,
 				7177EC31219867A700E94EAC /* AppDelegate.swift in Sources */,
+				71BFC91C219DC368001686E6 /* ContactDetailsViewController.swift in Sources */,
 				71F86C8A219A3EA200EA308F /* FUser.swift in Sources */,
 				71F86C8C219A3EA200EA308F /* FCollectionReference.swift in Sources */,
 				717467D9219B2FBC00D336DD /* Segues.swift in Sources */,

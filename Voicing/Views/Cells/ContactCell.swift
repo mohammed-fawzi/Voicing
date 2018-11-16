@@ -8,12 +8,17 @@
 
 import UIKit
 
+protocol ContactCellDelegate {
+    func didTappedAvatar(indexPath:IndexPath)
+}
+
 class ContactCell: UITableViewCell {
 
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
     var indexPath:IndexPath!
+    var delegate: ContactCellDelegate?
     let tapGesture = UITapGestureRecognizer()
     
     override func awakeFromNib() {
@@ -41,7 +46,7 @@ class ContactCell: UITableViewCell {
     }
     
     @objc func avatarTapped(){
-        
+        delegate!.didTappedAvatar(indexPath: indexPath)
     }
 
 }
