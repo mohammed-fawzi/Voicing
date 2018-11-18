@@ -27,6 +27,9 @@
 		71F86C8A219A3EA200EA308F /* FUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F86C84219A3EA200EA308F /* FUser.swift */; };
 		71F86C8B219A3EA200EA308F /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F86C85219A3EA200EA308F /* HelperFunctions.swift */; };
 		71F86C8C219A3EA200EA308F /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F86C86219A3EA200EA308F /* FCollectionReference.swift */; };
+		71FF006C21A049D400D3C716 /* Recent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF006B21A049D400D3C716 /* Recent.swift */; };
+		71FF006E21A0F72B00D3C716 /* RecentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF006D21A0F72B00D3C716 /* RecentCell.swift */; };
+		71FF007021A1019B00D3C716 /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF006F21A1019B00D3C716 /* RecentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		71F86C84219A3EA200EA308F /* FUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FUser.swift; sourceTree = "<group>"; };
 		71F86C85219A3EA200EA308F /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		71F86C86219A3EA200EA308F /* FCollectionReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
+		71FF006B21A049D400D3C716 /* Recent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recent.swift; sourceTree = "<group>"; };
+		71FF006D21A0F72B00D3C716 /* RecentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCell.swift; sourceTree = "<group>"; };
+		71FF006F21A1019B00D3C716 /* RecentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				714BA251219CE02D00C0D805 /* ContactCell.swift */,
+				71FF006D21A0F72B00D3C716 /* RecentCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -115,6 +122,7 @@
 				714BA24D219CA54B00C0D805 /* SettingsViewController.swift */,
 				714BA255219CEB7200C0D805 /* ContactsViewController.swift */,
 				71BFC91B219DC368001686E6 /* ContactDetailsViewController.swift */,
+				71FF006F21A1019B00D3C716 /* RecentViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -133,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				71F86C84219A3EA200EA308F /* FUser.swift */,
+				71FF006B21A049D400D3C716 /* Recent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,6 +346,7 @@
 				714BA256219CEB7200C0D805 /* ContactsViewController.swift in Sources */,
 				71F86C89219A3EA200EA308F /* Constants.swift in Sources */,
 				7177EC33219867A700E94EAC /* WelcomeViewController.swift in Sources */,
+				71FF007021A1019B00D3C716 /* RecentViewController.swift in Sources */,
 				714BA24E219CA54B00C0D805 /* SettingsViewController.swift in Sources */,
 				717467D7219B2CC300D336DD /* RegisterViewController.swift in Sources */,
 				7177EC31219867A700E94EAC /* AppDelegate.swift in Sources */,
@@ -344,7 +354,9 @@
 				71F86C8A219A3EA200EA308F /* FUser.swift in Sources */,
 				71F86C8C219A3EA200EA308F /* FCollectionReference.swift in Sources */,
 				717467D9219B2FBC00D336DD /* Segues.swift in Sources */,
+				71FF006E21A0F72B00D3C716 /* RecentCell.swift in Sources */,
 				714BA252219CE02D00C0D805 /* ContactCell.swift in Sources */,
+				71FF006C21A049D400D3C716 /* Recent.swift in Sources */,
 				71F86C88219A3EA200EA308F /* CountryCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

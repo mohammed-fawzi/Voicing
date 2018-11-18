@@ -10,5 +10,5 @@ import Foundation
 
 enum Segue:String {
     case showRegister
-    case showContactDetails
+    
 }

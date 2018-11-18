@@ -270,8 +270,8 @@ class FUser {
         class func logOutCurrentUser(completion: @escaping (_ success: Bool) -> Void) {
             
             // for push notification
-            //userDefaults.removeObject(forKey: kPUSHID)
-            //removeOneSignalId()
+            userDefaults.removeObject(forKey: kPUSHID)
+            removeOneSignalId()
     
             userDefaults.removeObject(forKey: kCURRENTUSER)
             userDefaults.synchronize()

@@ -23,14 +23,13 @@ class ContactsViewController: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        navigationItem.hidesSearchBarWhenScrolling = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // get rid of empthy cells
-        tableView.tableFooterView = UIView()
-        navigationItem.searchController = searchController
-        searchController.searchResultsUpdater = self
-        definesPresentationContext = true
+        
+        setupUI()
         
         loadUsers(filter: "All")
         
@@ -52,18 +51,7 @@ class ContactsViewController: UITableViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Segue.showContactDetails.rawValue {
-            let vc = segue.destination as! ContactDetailsViewController
-            if searchController.isActive && searchController.searchBar.text != "" {
-                vc.user = filterdUsers[tableView.indexPathForSelectedRow!.row]
-            }
-            else{
-                let sectionTitle = sectionTitleList[tableView.indexPathForSelectedRow!.section]
-                vc.user = allUsersGroupped[sectionTitle]![tableView.indexPathForSelectedRow!.row]
-            }
-        }
-    }
+  
     
 }
 
@@ -132,6 +120,18 @@ extension ContactsViewController{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        let user: FUser
+        if searchController.isActive && searchController.searchBar.text != "" {
+            user = filterdUsers[indexPath.row]
+        }
+        else {
+            let sectionTitle = sectionTitleList[indexPath.section]
+            user = allUsersGroupped[sectionTitle]![indexPath.row]
+        }
+        
+        startPrivateChat(user1: FUser.currentUser()!, user2: user)
+        
     }
 }
 
@@ -156,6 +156,16 @@ extension ContactsViewController: UISearchResultsUpdating {
 
 // MARK: - Helpers
 extension ContactsViewController {
+    
+   func setupUI(){
+    // get rid of empthy cells
+    tableView.tableFooterView = UIView()
+    navigationItem.searchController = searchController
+    navigationItem.hidesSearchBarWhenScrolling = true
+    searchController.searchResultsUpdater = self
+    searchController.dimsBackgroundDuringPresentation = false
+    definesPresentationContext = true
+    }
     
     func loadUsers(filter:String){
         ProgressHUD.show()
@@ -222,6 +232,8 @@ extension ContactsViewController {
             sectionTitleList.sort()
         }
     }
+    
+    
 }
 
 // show contact details when clicked the avatar image
