@@ -113,6 +113,14 @@ extension RecentViewController: UITableViewDelegate {
         restartRecentChat(recent: recent)
         
         // show chat view
+        let chatVC = ChatViewController()
+        chatVC.titleName = (recent[kWITHUSERFULLNAME] as? String)!
+        chatVC.chatRoomID = (recent[kCHATROOMID] as? String)!
+        chatVC.membersID = (recent[kMEMBERS] as? [String])!
+        chatVC.membersToPush = (recent[kMEMBERSTOPUSH] as? [String])!
+        chatVC.hidesBottomBarWhenPushed = true
+        chatVC.isGroup = false
+        navigationController?.pushViewController(chatVC, animated: true)
     }
     
     

@@ -139,10 +139,14 @@
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatarPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="SNL-uC-xTB">
                                 <rect key="frame" x="137.5" y="72" width="100" height="100"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="4YC-JQ-RnO"/>
                                     <constraint firstAttribute="width" constant="100" id="JeZ-qB-oig"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="UyZ-2b-cj0" appends="YES" id="CUc-7f-5zq"/>
+                                </connections>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WjG-10-uSu">
                                 <rect key="frame" x="16" y="182" width="343" height="30"/>
@@ -210,6 +214,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9y-6V-ik2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="UyZ-2b-cj0">
+                    <connections>
+                        <action selector="avatarDidTapped:" destination="Z2J-eB-VGr" id="7tc-pQ-L0n"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="895" y="134"/>
         </scene>

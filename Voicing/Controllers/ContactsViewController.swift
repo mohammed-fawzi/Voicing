@@ -130,7 +130,17 @@ extension ContactsViewController{
             user = allUsersGroupped[sectionTitle]![indexPath.row]
         }
         
-        startPrivateChat(user1: FUser.currentUser()!, user2: user)
+        let chatVC = ChatViewController()
+        chatVC.titleName = user.fullname
+        chatVC.chatRoomID = startPrivateChat(user1: FUser.currentUser()!, user2: user)
+        chatVC.membersID = [FUser.currentId(), user.objectId]
+        chatVC.membersToPush = [FUser.currentId(), user.objectId]
+        chatVC.hidesBottomBarWhenPushed = true
+        chatVC.isGroup = false
+        navigationController?.pushViewController(chatVC, animated: true)
+        
+        
+        
         
     }
 }

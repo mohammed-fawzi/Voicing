@@ -20,6 +20,13 @@
 		7177EC36219867A700E94EAC /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7177EC34219867A700E94EAC /* Welcome.storyboard */; };
 		7177EC38219867A900E94EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7177EC37219867A900E94EAC /* Assets.xcassets */; };
 		7177EC3B219867A900E94EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7177EC39219867A900E94EAC /* LaunchScreen.storyboard */; };
+		7186589721ACD8F8007F9A39 /* CallsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7186589621ACD8F8007F9A39 /* CallsViewController.swift */; };
+		7186589921ACDA99007F9A39 /* CallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7186589821ACDA99007F9A39 /* CallCell.swift */; };
+		718E57EA21ADEDB90027F4D1 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718E57E921ADEDB90027F4D1 /* Camera.swift */; };
+		718E57EC21AE09F40027F4D1 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718E57EB21AE09F40027F4D1 /* Storage.swift */; };
+		7197663721AED00000B53240 /* PhotoMediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7197663621AED00000B53240 /* PhotoMediaItem.swift */; };
+		7197663921AEE19900B53240 /* AudioRecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7197663821AEE19900B53240 /* AudioRecorderViewController.swift */; };
+		71AC944D21A2CDF300C20660 /* IncomingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC944C21A2CDF300C20660 /* IncomingMessage.swift */; };
 		71BFC91C219DC368001686E6 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BFC91B219DC368001686E6 /* ContactDetailsViewController.swift */; };
 		71F86C80219A309B00EA308F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71F86C7F219A309B00EA308F /* GoogleService-Info.plist */; };
 		71F86C88219A3EA200EA308F /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F86C82219A3EA200EA308F /* CountryCode.swift */; };
@@ -30,6 +37,8 @@
 		71FF006C21A049D400D3C716 /* Recent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF006B21A049D400D3C716 /* Recent.swift */; };
 		71FF006E21A0F72B00D3C716 /* RecentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF006D21A0F72B00D3C716 /* RecentCell.swift */; };
 		71FF007021A1019B00D3C716 /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF006F21A1019B00D3C716 /* RecentViewController.swift */; };
+		71FF007221A22F5500D3C716 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF007121A22F5500D3C716 /* ChatViewController.swift */; };
+		71FF007421A25F1900D3C716 /* OutgoingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF007321A25F1900D3C716 /* OutgoingMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +59,13 @@
 		7177EC37219867A900E94EAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7177EC3A219867A900E94EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7177EC3C219867A900E94EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7186589621ACD8F8007F9A39 /* CallsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallsViewController.swift; sourceTree = "<group>"; };
+		7186589821ACDA99007F9A39 /* CallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallCell.swift; sourceTree = "<group>"; };
+		718E57E921ADEDB90027F4D1 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		718E57EB21AE09F40027F4D1 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		7197663621AED00000B53240 /* PhotoMediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoMediaItem.swift; sourceTree = "<group>"; };
+		7197663821AEE19900B53240 /* AudioRecorderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderViewController.swift; sourceTree = "<group>"; };
+		71AC944C21A2CDF300C20660 /* IncomingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingMessage.swift; sourceTree = "<group>"; };
 		71BFC91B219DC368001686E6 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		71F86C7F219A309B00EA308F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		71F86C82219A3EA200EA308F /* CountryCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCode.swift; sourceTree = "<group>"; };
@@ -60,6 +76,8 @@
 		71FF006B21A049D400D3C716 /* Recent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recent.swift; sourceTree = "<group>"; };
 		71FF006D21A0F72B00D3C716 /* RecentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCell.swift; sourceTree = "<group>"; };
 		71FF006F21A1019B00D3C716 /* RecentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentViewController.swift; sourceTree = "<group>"; };
+		71FF007121A22F5500D3C716 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		71FF007321A25F1900D3C716 /* OutgoingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +104,7 @@
 		714BA24F219CDFA200C0D805 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				717467D4219B2C2B00D336DD /* StoryBoards */,
 				714BA250219CDFAA00C0D805 /* Cells */,
 			);
 			path = Views;
@@ -96,6 +115,7 @@
 			children = (
 				714BA251219CE02D00C0D805 /* ContactCell.swift */,
 				71FF006D21A0F72B00D3C716 /* RecentCell.swift */,
+				7186589821ACDA99007F9A39 /* CallCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -109,6 +129,8 @@
 				71F86C85219A3EA200EA308F /* HelperFunctions.swift */,
 				717467D8219B2FBC00D336DD /* Segues.swift */,
 				714BA253219CEAEC00C0D805 /* Cells.swift */,
+				718E57E921ADEDB90027F4D1 /* Camera.swift */,
+				718E57EB21AE09F40027F4D1 /* Storage.swift */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -123,6 +145,9 @@
 				714BA255219CEB7200C0D805 /* ContactsViewController.swift */,
 				71BFC91B219DC368001686E6 /* ContactDetailsViewController.swift */,
 				71FF006F21A1019B00D3C716 /* RecentViewController.swift */,
+				71FF007121A22F5500D3C716 /* ChatViewController.swift */,
+				7186589621ACD8F8007F9A39 /* CallsViewController.swift */,
+				7197663821AEE19900B53240 /* AudioRecorderViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -142,6 +167,9 @@
 			children = (
 				71F86C84219A3EA200EA308F /* FUser.swift */,
 				71FF006B21A049D400D3C716 /* Recent.swift */,
+				71FF007321A25F1900D3C716 /* OutgoingMessage.swift */,
+				71AC944C21A2CDF300C20660 /* IncomingMessage.swift */,
+				7197663621AED00000B53240 /* PhotoMediaItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -167,9 +195,8 @@
 		7177EC2F219867A700E94EAC /* Voicing */ = {
 			isa = PBXGroup;
 			children = (
-				714BA24F219CDFA200C0D805 /* Views */,
 				717467D3219B2C0000D336DD /* Controllers */,
-				717467D4219B2C2B00D336DD /* StoryBoards */,
+				714BA24F219CDFA200C0D805 /* Views */,
 				717467D5219B2C5800D336DD /* Model */,
 				717467D2219B2BD100D336DD /* helpers */,
 				7177EC37219867A900E94EAC /* Assets.xcassets */,
@@ -342,21 +369,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				71F86C8B219A3EA200EA308F /* HelperFunctions.swift in Sources */,
+				71AC944D21A2CDF300C20660 /* IncomingMessage.swift in Sources */,
 				714BA254219CEAEC00C0D805 /* Cells.swift in Sources */,
 				714BA256219CEB7200C0D805 /* ContactsViewController.swift in Sources */,
+				7197663721AED00000B53240 /* PhotoMediaItem.swift in Sources */,
 				71F86C89219A3EA200EA308F /* Constants.swift in Sources */,
+				718E57EC21AE09F40027F4D1 /* Storage.swift in Sources */,
+				7186589921ACDA99007F9A39 /* CallCell.swift in Sources */,
 				7177EC33219867A700E94EAC /* WelcomeViewController.swift in Sources */,
 				71FF007021A1019B00D3C716 /* RecentViewController.swift in Sources */,
 				714BA24E219CA54B00C0D805 /* SettingsViewController.swift in Sources */,
 				717467D7219B2CC300D336DD /* RegisterViewController.swift in Sources */,
 				7177EC31219867A700E94EAC /* AppDelegate.swift in Sources */,
+				71FF007421A25F1900D3C716 /* OutgoingMessage.swift in Sources */,
 				71BFC91C219DC368001686E6 /* ContactDetailsViewController.swift in Sources */,
 				71F86C8A219A3EA200EA308F /* FUser.swift in Sources */,
 				71F86C8C219A3EA200EA308F /* FCollectionReference.swift in Sources */,
+				7197663921AEE19900B53240 /* AudioRecorderViewController.swift in Sources */,
 				717467D9219B2FBC00D336DD /* Segues.swift in Sources */,
 				71FF006E21A0F72B00D3C716 /* RecentCell.swift in Sources */,
+				7186589721ACD8F8007F9A39 /* CallsViewController.swift in Sources */,
+				718E57EA21ADEDB90027F4D1 /* Camera.swift in Sources */,
 				714BA252219CE02D00C0D805 /* ContactCell.swift in Sources */,
 				71FF006C21A049D400D3C716 /* Recent.swift in Sources */,
+				71FF007221A22F5500D3C716 /* ChatViewController.swift in Sources */,
 				71F86C88219A3EA200EA308F /* CountryCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

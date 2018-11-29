@@ -8,6 +8,7 @@
 
 import UIKit
 import ProgressHUD
+import Photos
 
 class RegisterViewController: UIViewController {
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -20,10 +21,17 @@ class RegisterViewController: UIViewController {
     var email: String!
     var password: String!
     var avatarImage: UIImage?
+    var camera: Camera!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         camera = Camera(delegate: self)
+        avatarImageView.isUserInteractionEnabled = true
 
+    }
+    
+    @IBAction func avatarDidTapped(_ sender: Any) {
+        openPhotoLibrary()
     }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
@@ -77,7 +85,7 @@ class RegisterViewController: UIViewController {
             
         } else {
             
-            tempDictionary[kAVATAR] = convertImageToString(avatar: avatarImage!)
+            tempDictionary[kAVATAR] = self.convertImageToString(avatar: avatarImage!)
             updateUserWith(values: tempDictionary)
         }
         
@@ -86,7 +94,7 @@ class RegisterViewController: UIViewController {
     }
     
     func convertImageToString(avatar:UIImage) -> String{
-        let avatarImageData = avatar.jpegData(compressionQuality: 0.7)
+        let avatarImageData = avatar.jpegData(compressionQuality: 0.4)
         let avatarImageString = avatarImageData?.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
         return avatarImageString!
     }
@@ -114,4 +122,50 @@ class RegisterViewController: UIViewController {
             ProgressHUD.showSuccess("registration successful")
         }
     }
+    
+    
+    func openPhotoLibrary(){
+        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+        switch photoAuthorizationStatus {
+        case .authorized:
+            camera.PresentPhotoLibrary(target: self, canEdit: false)
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization { (newStatus) in
+                if newStatus == PHAuthorizationStatus.authorized {
+                    // Access is granted by user
+                    self.camera.PresentPhotoLibrary(target: self, canEdit: false)
+                    
+                }
+            }
+        default:
+            print("Error: no access to photo album.")
+        }
+        
+    }
+}
+
+
+
+extension  RegisterViewController: UIImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let picture = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        
+        if picture != nil {
+            
+            
+            avatarImageView.image = picture!.circleMasked
+            avatarImage = picture!
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+
+    
+}
+
+extension RegisterViewController: UINavigationControllerDelegate {
+    
 }

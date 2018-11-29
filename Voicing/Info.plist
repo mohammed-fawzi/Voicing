@@ -41,5 +41,17 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Voicing needs to access your Camera</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Voicing needs to access your Media Library</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Voicing needs to access your Photo Library</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Voicing needs to access your Microphone</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Voicing needs to access your Location</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Voicing needs to access your Contacts</string>
 </dict>
 </plist>

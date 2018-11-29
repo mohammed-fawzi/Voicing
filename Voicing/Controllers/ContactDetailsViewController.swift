@@ -33,6 +33,20 @@ class ContactDetailsViewController: UITableViewController {
     }
     
     @IBAction func messageButtonTapped(_ sender: Any) {
+        
+        if let user = self.user {
+            
+            let chatVC = ChatViewController()
+            chatVC.titleName = user.fullname
+            chatVC.chatRoomID = startPrivateChat(user1: FUser.currentUser()!, user2: user)
+            chatVC.membersID = [FUser.currentId(), user.objectId]
+            chatVC.membersToPush = [FUser.currentId(), user.objectId]
+            chatVC.hidesBottomBarWhenPushed = true
+            chatVC.isGroup = false
+            navigationController?.pushViewController(chatVC, animated: true)
+        }
+       
+        
     }
     
     @IBAction func blockUserTapped(_ sender: Any) {
