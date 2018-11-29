@@ -15,7 +15,7 @@ Voicing is an intuitive AI powered chatting app.
 - Login with phone number
 - Picture view for multiple pictures
 - Wallpaper backgrounds for Chat view
-- Message delivery, read status
+- Delivered and read message status
 - Block, Unblock users
  
 
