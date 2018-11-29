@@ -1,7 +1,7 @@
 # Voicing
 
 ## OVERVIEW
-Voicing is an intutive AI powerd chating app
+Voicing is an intuitive AI powered chatting app.
 
 ## Features
 - Live chat between multiple devices
