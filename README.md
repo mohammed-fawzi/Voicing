@@ -5,7 +5,7 @@ Voicing is an intutive AI powerd chating app
 
 ## Features
 - Live chat between multiple devices
--	Private chat, group chat and call functionalies
+-	Private chat, group chat and call functionalities
 -	Sending text, pictures, videos, audio, current location messages
 - preview and crop audio messages
 - Picture, video and audio upload progress indicator
