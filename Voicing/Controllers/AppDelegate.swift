@@ -8,12 +8,17 @@
 
 import UIKit
 import Firebase
+import CoreLocation
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var authListener: AuthStateDidChangeListenerHandle?
+    
+    var locationManager: CLLocationManager?
+    var coordinates: CLLocationCoordinate2D?
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -34,27 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-    }
-
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        locationManagerStart()
     }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
+    
     
     //MARK: helpers
     
@@ -65,10 +53,88 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainApp") as! UITabBarController
         window?.rootViewController = mainView
         }
-    
-    
-    
+
+}
 
 
+extension AppDelegate: CLLocationManagerDelegate {
+    
+    func locationManagerStart(){
+        
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways {
+            
+            if locationManager != nil {
+                locationManager!.delegate = self
+                locationManager!.desiredAccuracy = kCLLocationAccuracyBest
+            } else {
+                locationManager = CLLocationManager()
+                locationManager!.delegate = self
+                locationManager!.desiredAccuracy = kCLLocationAccuracyBest
+            }
+            
+            locationManager!.startUpdatingLocation()
+        
+        
+        }
+        
+        else if CLLocationManager.authorizationStatus() == .restricted || CLLocationManager.authorizationStatus() == .denied {
+            
+            print("please allow location access in settings")
+           
+        }
+        
+        else if CLLocationManager.authorizationStatus() == .notDetermined {
+            locationManager = CLLocationManager()
+            locationManager!.requestWhenInUseAuthorization()
+            locationManagerStart()
+        }
+        
+    }
+    
+    func locationManagerStop(){
+        
+        if locationManager != nil {
+            locationManager!.stopUpdatingLocation()
+        }
+    }
+    
+    func didHaveLocationAccess() -> Bool{
+        if locationManager != nil {
+            return true
+        }
+        return false
+    }
+
+    
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("faild to get location")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+        switch status {
+        case .notDetermined:
+            manager.requestWhenInUseAuthorization()
+        case .authorizedWhenInUse:
+            manager.startUpdatingLocation()
+        case .authorizedAlways:
+            manager.startUpdatingLocation()
+        case .restricted:
+            print("restricted")
+        case .denied:
+            locationManager = nil
+            print("denied location access")
+
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        print(locations)
+        coordinates = locations.last?.coordinate
+    }
+    
+    
 }
 

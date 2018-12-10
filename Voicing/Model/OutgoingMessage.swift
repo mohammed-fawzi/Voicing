@@ -74,6 +74,29 @@ class OutGoingMessage{
         
     }
     
+    
+    // location message
+
+    init(message: String, latitude: NSNumber, longitude: NSNumber, senderID: String, senderName: String, date: Date, status: String, type: String) {
+        
+        messageDictionary = NSMutableDictionary(objects: [message,
+                                                          latitude,
+                                                          longitude,
+                                                          senderID,
+                                                          senderName,
+                                                          dateFormatter().string(from: date),
+                                                          status,
+                                                          type],
+                                                forKeys: [kMESSAGE as NSCopying,
+                                                          kLATITUDE as NSCopying,
+                                                          kLONGITUDE as NSCopying,
+                                                          kSENDERID as NSCopying,
+                                                          kSENDERNAME as NSCopying,
+                                                          kDATE as NSCopying,
+                                                          kSTATUS as NSCopying,
+                                                          kTYPE as NSCopying])
+    }
+    
     func saveMessage(messageDictionary: NSMutableDictionary, chatRoomID: String, membersID: [String],
                      membersToPush: [String]){
         

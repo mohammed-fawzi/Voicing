@@ -31,7 +31,7 @@ class IncomingMessage {
         case kAUDIO:
             message = createAudioMessage(messageDictionary: messageDictionary, chatRoomID: chatRoomID)
         case kLOCATION:
-            print("location")
+           message = createLocationMessage(messageDictionary: messageDictionary, chatRoomID: chatRoomID)
         default:
             print("unknown")
 
@@ -116,7 +116,31 @@ class IncomingMessage {
     
     
     
+    // location Message
     
+    func createLocationMessage(messageDictionary: NSDictionary, chatRoomID: String) -> JSQMessage{
+        
+        let senderID = messageDictionary[kSENDERID] as! String
+        let senderName = messageDictionary[kSENDERNAME] as! String
+        let date = checkDate(messageDictionary: messageDictionary)
+        
+        
+        let text = messageDictionary[kMESSAGE] as! String
+        let lat = messageDictionary[kLATITUDE] as! Double
+        let long = messageDictionary[kLONGITUDE] as! Double
+        
+        let locationItem = JSQLocationMediaItem(location: nil)
+        locationItem?.appliesMediaViewMaskAsOutgoing = (senderID == FUser.currentId())
+        
+        let location = CLLocation(latitude: lat, longitude: long)
+        
+        locationItem?.setLocation(location, withCompletionHandler: {
+            self.collectionView?.reloadData()
+        })
+        
+       
+        return JSQMessage(senderId: senderID, senderDisplayName: senderName, date: date, media: locationItem)
+    }
     
     
     

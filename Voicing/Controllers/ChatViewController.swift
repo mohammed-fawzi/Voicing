@@ -49,12 +49,14 @@ class ChatViewController: JSQMessagesViewController {
     
     
     //MARK: *****variables*****
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var currentUser: FUser? = FUser.currentUser()
     let legitTypes: [String] = [kTEXT,kPICTURE,kVIDEO,kLOCATION,kAUDIO]
     var outGoingBubble = JSQMessagesBubbleImageFactory()?.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
     var inComingBubble = JSQMessagesBubbleImageFactory()?.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
     
     var camera: Camera!
+    
 
     //MARK: ***** Avatar variables*****
     var jsqAvatarDictionary: NSMutableDictionary?
@@ -426,7 +428,14 @@ extension ChatViewController {
         }
         
         let locationAction = UIAlertAction(title: "location", style: .default) { (action) in
-            self.openMapKit()
+            
+            if   self.appDelegate.didHaveLocationAccess() {
+                
+                self.sendLocationMessage(location: self.appDelegate.coordinates!, date: Date())
+            } else {
+                print("please allow location access")
+            }
+            
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
@@ -500,11 +509,7 @@ extension ChatViewController {
         
     }
     
-    func openMapKit() {
-        
-    }
-    
-    
+
     @objc func infoButtonTapped(){
         
     }
@@ -833,7 +838,21 @@ extension ChatViewController {
         
     }
     
-    func sendLocationMessage(location: String, date: Date){
+    
+    
+    // location message
+    func sendLocationMessage(location: CLLocationCoordinate2D, date: Date){
+        let lat = NSNumber(value: location.latitude)
+        let long = NSNumber(value: location.longitude)
+
+        let text = "[\(kLOCATION)]"
+        
+        let message = OutGoingMessage(message: text, latitude: lat, longitude: long, senderID: currentUser!.objectId, senderName: currentUser!.fullname, date: date, status: kDELIVERED, type: kLOCATION)
+        
+        JSQSystemSoundPlayer.jsq_playMessageSentSound()
+        self.finishSendingMessage()
+        
+        message.saveMessage(messageDictionary: message.messageDictionary, chatRoomID: self.chatRoomID, membersID: self.membersID, membersToPush: self.membersToPush)
         
     }
     
