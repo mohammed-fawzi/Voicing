@@ -223,6 +223,7 @@
                                                     <state key="normal" title="Blocked Users"/>
                                                     <connections>
                                                         <action selector="blockedUserButtonTapped:" destination="gMM-ya-wgD" eventType="touchUpInside" id="dhZ-U0-3Qi"/>
+                                                        <segue destination="fm9-Ca-tgL" kind="show" identifier="showBlockedUsers" id="fBm-aO-8z1"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -245,6 +246,7 @@
                                                     <state key="normal" title="Chat Backgrounds"/>
                                                     <connections>
                                                         <action selector="chatBackGroundButtonTapped:" destination="gMM-ya-wgD" eventType="touchUpInside" id="EcW-bU-Iy9"/>
+                                                        <segue destination="UDd-sK-VvG" kind="show" id="o3E-gW-pf8"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -274,6 +276,9 @@
                                                         <constraint firstAttribute="height" constant="31" id="9bp-fZ-dnw"/>
                                                         <constraint firstAttribute="width" constant="47" id="pJG-9y-f6W"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="AvatarSwitchChangedValue:" destination="gMM-ya-wgD" eventType="valueChanged" id="r1O-XK-S2J"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -368,8 +373,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aab-d9-iTy">
-                                                    <rect key="frame" x="319" y="11.5" width="40" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aab-d9-iTy">
+                                                    <rect key="frame" x="319" y="11.5" width="40" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="MXz-oH-vbB"/>
                                                     </constraints>
@@ -427,11 +432,12 @@
                         <outlet property="avatarImageView" destination="nrQ-N0-bHw" id="cUb-Fh-LxP"/>
                         <outlet property="nameLabel" destination="rPj-lP-SK2" id="ZBV-NZ-Pv1"/>
                         <outlet property="showAvatarSwitch" destination="46q-dQ-xoR" id="UYr-xu-uUO"/>
+                        <outlet property="versionLabel" destination="aab-d9-iTy" id="YHS-e2-jVp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEy-bq-Eyn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4298.3999999999996" y="321.58920539730138"/>
+            <point key="canvasLocation" x="4820" y="311"/>
         </scene>
         <!--Contacts-->
         <scene sceneID="Pls-cV-97t">
@@ -819,6 +825,109 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aA5-eP-8wb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-623.20000000000005" y="335.98200899550227"/>
+        </scene>
+        <!--Blocked users-->
+        <scene sceneID="H0c-bE-9jg">
+            <objects>
+                <tableViewController title="Blocked users" hidesBottomBarWhenPushed="YES" id="fm9-Ca-tgL" customClass="BlockedUsersViewController" customModule="Voicing" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eKn-CW-E8C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" id="jK0-l0-RtO" customClass="ContactCell" customModule="Voicing" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jK0-l0-RtO" id="9Wq-mA-i29">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatarPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="8Mj-Bk-lc9">
+                                            <rect key="frame" x="8" y="10" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="dPi-rF-Rqb"/>
+                                                <constraint firstAttribute="width" constant="60" id="kAJ-Ta-gQ7"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPo-6E-f27">
+                                            <rect key="frame" x="76" y="29.5" width="291" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="8Mj-Bk-lc9" firstAttribute="leading" secondItem="9Wq-mA-i29" secondAttribute="leading" constant="8" id="0qQ-vS-y76"/>
+                                        <constraint firstItem="VPo-6E-f27" firstAttribute="centerY" secondItem="9Wq-mA-i29" secondAttribute="centerY" id="4wl-hi-pHe"/>
+                                        <constraint firstItem="8Mj-Bk-lc9" firstAttribute="centerY" secondItem="9Wq-mA-i29" secondAttribute="centerY" id="7A4-yc-Epi"/>
+                                        <constraint firstItem="VPo-6E-f27" firstAttribute="leading" secondItem="8Mj-Bk-lc9" secondAttribute="trailing" constant="8" id="L3M-GM-dGf"/>
+                                        <constraint firstAttribute="trailing" secondItem="VPo-6E-f27" secondAttribute="trailing" constant="8" id="u99-cz-OM4"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="avatarImageView" destination="8Mj-Bk-lc9" id="QaC-g2-rVU"/>
+                                    <outlet property="nameLabel" destination="VPo-6E-f27" id="J5O-WC-b22"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fm9-Ca-tgL" id="V6b-ae-Kii"/>
+                            <outlet property="delegate" destination="fm9-Ca-tgL" id="HVf-lU-dR4"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aL7-Tm-9Ep" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4279" y="1082"/>
+        </scene>
+        <!--Backgrounds-->
+        <scene sceneID="yzB-T9-FT0">
+            <objects>
+                <collectionViewController hidesBottomBarWhenPushed="YES" id="UDd-sK-VvG" customClass="BackgroundsViewController" customModule="Voicing" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TXe-kX-DaU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pxm-aa-AOB">
+                            <size key="itemSize" width="107" height="190"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="backgroundCell" id="4mB-Mw-m8e" customClass="BackgroundCell" customModule="Voicing" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="107" height="190"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="107" height="190"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DaQ-PH-Epi">
+                                            <rect key="frame" x="0.0" y="0.0" width="107" height="190"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="DaQ-PH-Epi" firstAttribute="leading" secondItem="4mB-Mw-m8e" secondAttribute="leading" id="057-2o-Cpw"/>
+                                    <constraint firstItem="DaQ-PH-Epi" firstAttribute="top" secondItem="4mB-Mw-m8e" secondAttribute="top" id="0Iz-Vq-k5a"/>
+                                    <constraint firstAttribute="trailing" secondItem="DaQ-PH-Epi" secondAttribute="trailing" id="kHb-Xm-v29"/>
+                                    <constraint firstAttribute="bottom" secondItem="DaQ-PH-Epi" secondAttribute="bottom" id="xrE-u1-0LT"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="DaQ-PH-Epi" id="CkQ-bJ-gsj"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="UDd-sK-VvG" id="T1s-fx-AtL"/>
+                            <outlet property="delegate" destination="UDd-sK-VvG" id="ZHy-UG-O7N"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Backgrounds" largeTitleDisplayMode="never" id="lZv-ES-ZcZ"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P8E-fo-iEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5564" y="1081.7091454272863"/>
         </scene>
     </scenes>
     <resources>

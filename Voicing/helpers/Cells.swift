@@ -12,4 +12,5 @@ enum Cell:String {
     case userCell
     case recentCell
     case callCell
+    case backgroundCell
 }
