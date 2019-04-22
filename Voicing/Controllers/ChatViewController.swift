@@ -427,7 +427,7 @@ extension ChatViewController {
             self.openVideoLibrary()
         }
         
-        let locationAction = UIAlertAction(title: "location", style: .default) { (action) in
+        let locationAction = UIAlertAction(title: "Location", style: .default) { (action) in
             
             if   self.appDelegate.didHaveLocationAccess() {
                 
